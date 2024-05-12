@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/common/color_extensions.dart';
+import 'package:food_delivery/view/login/login_view.dart';
+import 'package:food_delivery/view/login/signup_view.dart';
 
 import '../../common_widget/round_button.dart';
 
@@ -52,16 +54,20 @@ class _WelcomeViewState extends State<WelcomeView> {
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
               title: "Login",
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginView()));
+              },
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: RoundButton(
               title: "Create an Account",
               type: RoundButtonType.textPrime,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpView()));
+              },
             ),
           ),
         ],
