@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/common_widget/round_button.dart';
 import 'package:food_delivery/view/login/reset_password_view.dart';
 import 'package:food_delivery/view/login/signup_view.dart';
+import 'package:food_delivery/view/on_boarding/on_boarding_view.dart';
 
 import '../../common/color_extensions.dart';
 import '../../common_widget/round_icon_button.dart';
@@ -51,7 +52,9 @@ class _LoginViewState extends State<LoginView> {
                   controller: txtPassword,
                   obscureText: true),
               const SizedBox(height: 25),
-              RoundButton(title: 'Login', onPressed: () {}),
+              RoundButton(title: 'Login', onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const OnboardingView()));
+              }),
               const SizedBox(height: 4),
               TextButton(
                   onPressed: () {
