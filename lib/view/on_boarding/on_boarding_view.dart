@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:food_delivery/common/color_extensions.dart';
 import 'package:food_delivery/common_widget/round_button.dart';
 
+import '../main_tableview/main_tabview.dart';
+
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
 
@@ -119,8 +121,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: RoundButton(title: "Next", onPressed: () {
                 if (selectPage >= pageArr.length - 1) {
-                  //homepage
-                  print("go home");
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const MainTabView()));
                 } else {
                   //Next
                   setState(() {
